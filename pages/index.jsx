@@ -15,7 +15,7 @@ export default function Index() {
           </div>
         </div> */}
 
-        <div className='h-screen w-full backdrop-filter backdrop-blur-lg dark:bg-black bg-white dark:bg-opacity-50 bg-opacity-50 absolute'></div>
+        <div className='h-screen w-full backdrop-filter backdrop-blur-lg dark:bg-black bg-white dark:bg-opacity-50 bg-opacity-20 absolute'></div>
 
         {/* sections */}
           <Home />
