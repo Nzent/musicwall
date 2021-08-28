@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/dist/client/router'
-export default function accounterr() {
+export default function Index() {
     const router = useRouter()
     const { error } = router.query
     return (

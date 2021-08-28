@@ -17,7 +17,7 @@ export default function Listitems() {
                         
                         dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-80'>
                         <div className='flex items-center space-x-2'>
-                            <Image src='/imgs/ab1.jpg' width={40} height={40} className='rounded-md drop-shadow-xl' />
+                            <Image src='/imgs/ab1.jpg' width={40} height={40} className='rounded-md drop-shadow-xl' alt="album art thumbnail"/>
                             {/* Name */}
                             <div>
                                 <h1 className='text-gray-500 font-bold group-hover:text-white transition duration-300 dark:text-gray-200' >So It Goes</h1>

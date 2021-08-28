@@ -32,7 +32,7 @@ export default function Sidenav() {
                     {/* PROFILE */}
                     {session ?
                         <div className='flex flex-col justify-center items-center mb-2 filter drop-shadow-md'>
-                            <Image src={session.user.image} width={56} height={56} className='rounded-full' />
+                            <Image src={session.user.image} width={56} height={56} className='rounded-full' alt="user avatar"/>
                             <div className='text-gray-800 font-bold dark:text-green-500'>{session.user.name}</div>
                         </div>
                         :
@@ -74,7 +74,7 @@ export default function Sidenav() {
                                 <div onClick={() => signIn('google')}>
                                     <Listitem icon={
                                         <div className='flex items-center'>
-                                            <Image src='/icons/google.svg' width={20} height={20} className="text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" />
+                                            <Image src='/icons/google.svg' width={20} height={20} className="text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" alt="google logo"/>
                                         </div>
                                     }
                                         title='Google' />
@@ -82,7 +82,7 @@ export default function Sidenav() {
                                 <div onClick={() => signIn('spotify')} >
                                     <Listitem icon={
                                         <div className='flex items-center'>
-                                            <Image src='/icons/spotify.svg' width={20} height={20} className="text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" />
+                                            <Image src='/icons/spotify.svg' width={20} height={20} className="text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" alt="spotify logo"/>
                                         </div>
                                     }
                                         title='Spotify' />
