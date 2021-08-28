@@ -1,4 +1,4 @@
-import { ClockIcon, CollectionIcon, HomeIcon, InformationCircleIcon, LockOpenIcon, LogoutIcon, MoonIcon, MusicNoteIcon, SunIcon, TrendingUpIcon, UserAddIcon, UserIcon, GlobeIcon, MusicNoteIcon as Logo } from '@heroicons/react/solid'
+import { ClockIcon, CollectionIcon, HomeIcon, InformationCircleIcon, LockOpenIcon, LogoutIcon, MoonIcon, MusicNoteIcon, SunIcon, TrendingUpIcon, UserAddIcon, UserIcon, GlobeIcon, MusicNoteIcon as Logo, UserCircleIcon } from '@heroicons/react/solid'
 import React, { useState } from 'react'
 import Listitem from './listitem'
 import AudioPlayer from '../audioplayer/player'
@@ -9,6 +9,7 @@ export default function Sidenav() {
 
 
 
+
     const [session, loading] = useSession()
     const [colorTheme, setTheme] = useDarkMode()
 
@@ -16,7 +17,7 @@ export default function Sidenav() {
     return (
         <>
             {/* Left navbar */}
-            <div className='p-4 h-full fixed z-10 
+            <div className='p-4 h-full w-48 fixed z-10 
             backdrop-filter backdrop-blur-xl 
             bg-white bg-opacity-90 shadow-md
             dark:bg-gray-800 dark:bg-opacity-50 dark:shadow-md'
@@ -29,11 +30,15 @@ export default function Sidenav() {
                     </div>
 
                     {/* PROFILE */}
-                    {session &&
-                        <div className='flex flex-col justify-center items-center mb-2'>
-                            <Image src={session.user.image} width={50} height={50} className='rounded-full' />
+                    {session ?
+                        <div className='flex flex-col justify-center items-center mb-2 filter drop-shadow-md'>
+                            <Image src={session.user.image} width={56} height={56} className='rounded-full' />
                             <div className='text-gray-800 font-bold dark:text-green-500'>{session.user.name}</div>
-                            <div>{session.accessToken}</div>
+                        </div>
+                        :
+                        <div className='flex flex-col justify-center items-center mb-2'>
+                            <UserCircleIcon className='h-14 w-14 text-gray-500 filter drop-shadow-md' />
+                            <div className='text-gray-800 font-bold dark:text-green-500'>Guest</div>
                         </div>
                     }
                     <ul className={`text-gray-500 space-y-2 `}>
@@ -63,11 +68,24 @@ export default function Sidenav() {
                             <span className='text-green-500'>My muzic</span></li>
 
                         {/* AUTH */}
+
                         {!session ?
                             <>
                                 <div onClick={() => signIn('google')}>
-                                    <Listitem icon={<GlobeIcon className="h-5 w-5 text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" />}
+                                    <Listitem icon={
+                                        <div className='flex items-center'>
+                                            <Image src='/icons/google.svg' width={20} height={20} className="text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" />
+                                        </div>
+                                    }
                                         title='Google' />
+                                </div>
+                                <div onClick={() => signIn('spotify')} >
+                                    <Listitem icon={
+                                        <div className='flex items-center'>
+                                            <Image src='/icons/spotify.svg' width={20} height={20} className="text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" />
+                                        </div>
+                                    }
+                                        title='Spotify' />
                                 </div>
                                 <div onClick={() => signIn('')}>
                                     <Listitem icon={<LockOpenIcon className="h-5 w-5 text-gray-500 dark:text-gray-200 group-hover:text-white transition duration-300" />}

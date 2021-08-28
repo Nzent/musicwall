@@ -11,9 +11,11 @@
   "dependencies": {
     "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.4",
+    "@next-auth/prisma-adapter": "^0.5.4",
+    "@prisma/client": "^2.30.0",
     "axios": "^0.21.1",
     "framer-motion": "^4.1.17",
-    "next": "11.1.0",
+    "next": "^11.1.0",
     "next-auth": "^3.29.0",
     "next-themes": "^0.0.15",
     "pure-react-carousel": "^1.27.6",
@@ -27,6 +29,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
     "postcss": "^8.3.6",
+    "prisma": "^2.30.0",
     "tailwindcss": "^2.2.7"
   }
 }

@@ -4,14 +4,11 @@ import { ArrowCircleRightIcon, ArrowCircleLeftIcon } from '@heroicons/react/outl
 import Carouselitem from '../../../components/carouselitem/carouselitem';
 import Listitems from '../../../components/listsection/listitems';
 import DetailsCard from '../../../components/detailscard';
+import axios from 'axios';
+
+
 
 export default function Index() {
-
-    // const router = useRouter()
-    // useEffect(() => {
-    //     router.push(`https://accounts.spotify.com/authorize?client_id=${process.env.BASE_URL}&response_type=code&redirect_uri=http://localhost:3000/callback&scope=user-read-private%20user-read-email&state=34fFs29kd09`)
-    // }, [])
-
 
     return (
         <>
